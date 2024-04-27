@@ -77,42 +77,42 @@ void jokoa01(){
 	}
 }
 
-void erasoEgoera(){
+ //void erasoEgoera(){
 
-	int aurrekoPultsazio==L;
-	while(EGOERA == ERASOA){// HAY QUE CONFIGURAR EL TEMPORIZADOR PARA QUE VAYA SUMANDO TIEMPO
-		t4seg++;
-		while (t4seg<=4){
-			if (TeklaDetektatu() == 1){
+ //	int aurrekoPultsazio==L;
+ //	while(EGOERA == ERASOA){// HAY QUE CONFIGURAR EL TEMPORIZADOR PARA QUE VAYA SUMANDO TIEMPO
+// 		t4seg++;
+// 		while (t4seg<=4){
+//			if (TeklaDetektatu() == 1){
 
-					case L: 
-						if (L_R_Detektatu()==R){
-							aurrekoPultsazio==R;
-							boss_hp -= my_dmg;
-										switch(aurrekoPultsazio){}
-						break;				
-					case R:
-						aurrekoPultsazio=L_R_Detektatu();
-						if (aurrekoPultsazio==L){
+// 					case L: 
+// 						if (L_R_Detektatu()==R){
+// 							aurrekoPultsazio==R;
+// 							boss_hp -= my_dmg;
+// 										switch(aurrekoPultsazio){}
+//						break;				
+// 					case R:
+// 						aurrekoPultsazio=L_R_Detektatu();
+// 						if (aurrekoPultsazio==L){
 							
-							boss_hp -= my_dmg;
-							ezabatuDragon();
-							ErakutsiDragon(4,100,100);
-						}					
-						break;	
-					default:
-						break;
-				}
-			}
-			if (boss_hp<=0){
-				EGOERA = IRABAZI;
-				irabaziEgoera();
-			}
-		}
-		EGOERA = EKIDIN;
-		ekidinEgoera(); //LLAMADA RECURSIVA A LA EGOERA EKIDIN, CUANDO SALE DE ESTA FASE, VUELVE A EMPEZAR EL BUCLE, ASI NO SE METE INNECESARIAMENTE EN MAS LLAMADAS
-	}
-}
+// 							boss_hp -= my_dmg;
+// 							ezabatuDragon();
+// 							ErakutsiDragon(4,100,100);
+// 						}					
+// 						break;	
+// 					default:
+// 						break;
+// 				}
+//			}
+// 			if (boss_hp<=0){
+// 				EGOERA = IRABAZI;
+// 				irabaziEgoera();
+// 			}
+// 		}
+// 		EGOERA = EKIDIN;
+// 		ekidinEgoera(); //LLAMADA RECURSIVA A LA EGOERA EKIDIN, CUANDO SALE DE ESTA FASE, VUELVE A EMPEZAR EL BUCLE, ASI NO SE METE INNECESARIAMENTE EN MAS LLAMADAS
+// 	}
+// }
 
 int L_R_Detektatu(){
 	if (SakatutakoTekla() == L){	
