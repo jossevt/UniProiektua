@@ -74,6 +74,11 @@ void jokoa01(){
 				}
 			}
 		}
+		if(EGOERA==EKIDIN){
+			if(ekidinAttacks==false && my_hp==1){
+				erakutsiGalduFondoa;
+			}
+		}
 	}
 }
 
