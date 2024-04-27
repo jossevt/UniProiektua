@@ -30,7 +30,6 @@ int SakatutakoTekla() {
 	else if ((~TEKLAK_DAT & 0x4200)==0x4200) return L; // L tekla
 }
 
-// |= ????????
 void konfiguratuTeklatua(int TEK_konf){
 	// Teklatuaren konfigurazioa bere S/I erregistroak aldatuz
 	TEKLAK_KNT |= TEK_konf;
@@ -69,13 +68,11 @@ void DenbEtenBaimendu(){
 }
 
 void DenbEtenGalarazi(){
-
 // Tenporizadore baten etenak galarazi (Timer0)
 // Horretarako hasieran eten guztiak galarazi eta bukaeran berriro baimendu
 	IME=0;
 	IE &= 0xFFFFFFF7; // 3 bitari 0 balioa eman
 	IME=1;
-
 }
 
 void ErlojuaMartxanJarri(){

@@ -11,25 +11,37 @@ adibide batean oinarrituta.
 #include "definizioak.h"
 
 u16* gfxpj;
-u16* gfxerronboHandia;
-
+u16* gfxpjUP;
+u16* gfxpjDOWN;
+u16* gfxdragon;
+u16* gfxdragonF;
 
 /* Pantailan erakutsi nahi den sprite bakoitzeko memoria erreserbatu.*/
 void memoriaErreserbatu()
 {
 	/* Pantaila nagusian gehitu nahi den sprite bakoitzarentzako horrelako bat egin behar da. */
-	gfxerronbo= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
-	gfxerronboHandia=oamAllocateGfx(&oamMain, SpriteSize_32x32, SpriteColorFormat_256Color);
+	gfxpj= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
+	gfxpjUP= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
+	gfxpjDOWN= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
+	gfxdragon= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
+	gfxdragonF= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
 }
 
 /* Pixel bakoitzak har ditzakeen 256 balioetako bakoitzari kolore bat esleitu PANTAILA NAGUSIAN. 0 balioa gardena da 
    eta definitu gabeko balioak beltzak. SPRITEARI KOLOREAK ESLEITZEKO ALDATU*/
 void PaletaNagusiaEzarri() {
-
 	SPRITE_PALETTE[1] = RGB15(31,0,0); // 1 baliodun pixelak gorriak izango dira.
-	SPRITE_PALETTE[2] = RGB15(0,31,0); // 2 baliodun pixelak berdeak izango dira.
-	SPRITE_PALETTE[3] = RGB15(0,0,31); // 3 baliodun pixelak urdinak izango dira.
-}
+	SPRITE_PALETTE[2] = RGB15(31,31,0); // 2 baliodun pixelak horiak izango dira.
+	SPRITE_PALETTE[3] = RGB15(0,0,0); // 3 baliodun pixelak beltzak izango dira.
+	SPRITE_PALETTE[4] = RGB15(19,0,4); // 3 baliodun pixelak granateak izango dira.
+	SPRITE_PALETTE[5] = RGB15(25,0,0); // 3 baliodun pixelak marroiak izango dira.
+	SPRITE_PALETTE[6] = RGB15(31,19,25); // 3 baliodun pixelak arrosak izango dira.
+	SPRITE_PALETTE[7] = RGB15(31,31,19); // 3 baliodun pixelak hori argiak izango dira.
+	SPRITE_PALETTE[8] = RGB15(16,16,16); // 3 baliodun pixelak grisak izango dira.
+	SPRITE_PALETTE[9] = RGB15(25,25,25); // 3 baliodun pixelak gris argiak izango dira.
+	SPRITE_PALETTE[10] = RGB15(8,8,8); // 3 baliodun pixelak gris ilunak izango dira.
+	SPRITE_PALETTE[11] = RGB15(0,16,16); // 3 baliodun pixelak berde urdinxkak izango dira.
+	}
 
 /* 16x16 pixeleko Sprite baten definizioa erronbo bat marrazteko */
 /* Memoriako bankuek duten lan egiteko modua dela eta, lehenengo lau lerroak goiko
@@ -37,7 +49,7 @@ void PaletaNagusiaEzarri() {
    hurrengo lauak beheko ezkerreko koadrantean eta azkeneko lauak beheko eskuineko koadrantean. 
    Alboko irudian ikusten den bezala. */
 
-u8 pjN[256] = 
+u8 pj[256] = 
 {
 	0	,	0	,	6	,	6	,	6	,	0	,	6	,	6	,	6	,	6	,	1	,	1	,	6	,	6	,	9	,	11	,	//	0	0	6	6	6	0	6	6	6	6	6	6	0	0	0	0
 6	,	6	,	1	,	6	,	6	,	9	,	9	,	11	,	6	,	6	,	6	,	6	,	6	,	6	,	9	,	9	,	//	6	6	1	1	6	6	9	11	10	11	10	11	6	0	0	0
@@ -380,4 +392,3 @@ oamSet(&oamMain, // main graphics engine context
 oamUpdate(&oamMain); 
 
 }
-

@@ -10,37 +10,71 @@ periferikoak.c
 #include "spriteak.h"
 
 
-
 void tekEten (){ // tekla
+	
+	if (EGOERA==MENU && SakatutakoTekla()==SELECT){
+		erakutsiIstorioa();
+		EGOERA=ISTORIOA;
+	}
 
 	if(EGOERA == ISTORIOA && SakatutakoTekla() == A){
 			my_hp=4;
 			my_dmg=2;
 			boss_hp=2000;
 			t4seg=0;
-			EGOERA=ERASOA;	
-		 	erasoEgoera();	
-	
+			EGOERA=ERASOA;
+			erakutsiBatalla();	
+			Erakutsipj(1,100,100);
+			ErakutsiDragon(2,100,100);
 	}
-	
-	if(EGOERA == EKIDIN){ // ????? 
-		if(beharrezkoTeklaSakatu() == false){ //HAY QUE IMPLEMENTAR
-			ekidin_attacks=false;
-		}else{kont=kont+1;}
+	if (EGOERA == IRABAZI || EGOERA == GALDU){
+		if(TaktilaSakatuta() == 1 || SakatutakoTekla()==SELECT){
+			EGOERA = MENU;
+		}
+	}
+	if(EGOERA==EKIDIN){
+		//erakutsiBeharrezkoTekla
+		int beharrezkoTekla = rand() % 2; //HAY QUE DEFINIR ZERBITZU ERRUTINAK. RAND % 2 ES UNA FUNCION PARA ELEGIR UN NUMERO RANDOM ENTRE 0 Y 1, A ES 0 Y B ES 1.
+		switch (beharrezkoTekla){
+		case 0:
+			erakutsiABotoia();
+			char tekla=A;
+			
+			break;
+		case 1:
+			erakutsiBBotoia();
+			char tekla=B;
+			
+			break;
+		}
+		if(SakatutakoTekla()!=tekla){
+			ekidinAttacks=false;
+		}
 	}
 }	
 
 void tenpEten(){ // tenporizadorearen zerbitzu  errutina
-
-	if (EGOERA==ISTORIOA){
+	if (EGOERA==ERASOA || EGOERA == L || EGOERA == R){
 		t4seg++; 
-		if (t4seg==4*15){
-			erakutsiFondoBat();
+		if (t4seg>=4*15 && EGOERA==ERASOA){
 			t4seg=0;
 			ekidin_attacks=true;
-			EGOERA=3;
+			EGOERA=EKIDIN;
+		}else if(t4seg>=4*15 && (EGOERA==L || EGOERA==R) ){
+			EGOERA==ERASOA;
 		}
-	}		
+	}
+	if(EGOERA == EKIDIN){
+		t4seg++;
+		if(t4seg == 4*15 && ekidinAttacks==true){
+			t4seg = 0;
+			EGOERA = ERASOA;
+		}else if(t4seg == 4*15 && ekidinAttacks=false && my_hp > 1){
+			my_hp--;
+			t4seg=0;
+			EGOERA == ERASOA;
+		}
+	}
 }
 
 void etenZerbErrutEzarri(){

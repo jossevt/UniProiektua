@@ -56,7 +56,8 @@ extern int my_hp; // Pertsonaiaren bizitza finkatzen duen aldagaia
 extern int my_dmg; // Pertsonaiaren eraso balioa finkatzen duen aldagaia
 extern int boss_hp; // Nagusiaren bizitza finkatzen duen aldagaia
 extern int t4seg;   // Lau segundo pasatzen ote diren ikusten joateko
-extern bool ekidin_attacks; //Erasoa ekiditea lortu duen edo ez finkatzen duen aldagaia
-extern int kont;
+extern bool ekidinAttacks; //Erasoa ekiditea lortu duen edo ez finkatzen duen aldagaia
+extern 
+
 
 

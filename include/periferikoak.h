@@ -14,4 +14,5 @@ extern void DenbEtenBaimendu();
 extern void DenbEtenGalarazi();
 extern void ErlojuaMartxanJarri();
 extern void ErlojuaGelditu();
+extern void TaktilaSakatuta();
 

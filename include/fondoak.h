@@ -4,7 +4,10 @@
 fondoak.h
 -------------------------------------*/
 
-extern void erakutsiFondoBat();
-extern void erakutsiFondoBi();
-extern void erakutsiAtea();
-extern void erakutsiAteaIrekita();
+extern void erakutsiBatalla();
+extern void erakutsiIrabaziFondoa();
+extern void erakutsiGalduFondoa();
+extern void erakutsiMenu();
+extern void erakutsiIstorioa();
+
+

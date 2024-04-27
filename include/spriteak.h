@@ -20,11 +20,19 @@ extern void SpriteakMemorianGorde();
 
 /* Funtzio honek erronbo bat irudikatzen du pantailako x,y posizioan. Pantailan ateratzea nahi den erronbo 
    bakoitzari indize desberdin bat esleitu behar zaio, 0 eta 126 balioen arteko indizea izan daiteke. */
-extern void ErakutsiErronboa(int indizea, int x, int y);
 
 /* Funtzio honek erronbo baten indizea pasata pantailatik ezabatzen du */
-extern void EzabatuErronboa(int indizea, int x, int y);
-extern void ErakutsiErronboHandia(int indizea, int x, int y);
-extern void EzabatuErronboHandia(int indizea, int x, int y);
+extern void Erakutsipj(int indizea, int x, int y);
+extern void Ezabatupj(int indizea, int x, int y);
+extern void ErakutsipjUP(int indizea, int x, int y);
+extern void EzabatupjUP(int indizea, int x, int y);
+extern void ErakutsipjDOWN(int indizea, int x, int y);
+extern void EzabatupjDOWN(int indizea, int x, int y);
+extern void ErakutsiDragon(int indizea, int x, int y);
+extern void EzabatuDragon(int indizea, int x, int y);
+extern void ErakutsidragonF(int indizea, int x, int y);
+extern void EzabatuDragonF(int indizea, int x, int y);
+
+
 
 
