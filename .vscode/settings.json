@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "zerbitzuerrutinak.h": "c",
+        "jokoa01.h": "c",
+        "definizioak.h": "c"
+    }
+}

@@ -1,0 +1,1 @@
+Atea.o: Atea.s
