@@ -1,0 +1,1 @@
+GalduFondoa.o: GalduFondoa.s

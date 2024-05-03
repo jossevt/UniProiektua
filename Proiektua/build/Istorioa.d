@@ -1,0 +1,1 @@
+Istorioa.o: Istorioa.s
